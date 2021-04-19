@@ -55,7 +55,7 @@ const SWR1 = () => {
     }
 
     const getPet = async (id) => {
-        let pet = await axios.get(`${URL}${id}`)
+        let pet = await axios.get(`${URL}/${id}`)
         console.log('bear id: ', pet.data)
         setPet({ id: pet.data.id, type: pet.data.type, weight: pet.data.weight, age: pet.data.age, price: pet.data.price })
     }
@@ -92,13 +92,13 @@ const SWR1 = () => {
 
 
     const deletePet = async (id) => {
-        const result = await axios.delete(`${URL}${id}`)
+        const result = await axios.delete(`${URL}/${id}`)
         console.log(result.data)
         getPets()
     }
 
     const updatePet = async (id) => {
-        const result = await axios.put(`${URL}${id}`, { id, type, age, weight, price })
+        const result = await axios.put(`${URL}/${id}`, { id, type, age, weight, price })
         //console.log('student id update: ', result.data)
         getPets()
     }

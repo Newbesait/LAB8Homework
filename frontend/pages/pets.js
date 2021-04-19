@@ -30,7 +30,7 @@ const SWR2 = () => {
         //console.log('Pet:', pets.data)
     }
     const buyPet = async (id) => {
-        const result = await axios.delete(`${URL2}${id}`)
+        const result = await axios.delete(`${URL2}/${id}`)
         console.log(result.data)
         getPets()
     }
